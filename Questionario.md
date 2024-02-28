@@ -1,20 +1,38 @@
 # Questionário Sistemas Embarcados I
 
 ## 1. Explique brevemente o que é compilação cruzada (***cross-compiling***) e para que ela serve.
+R:
+A compilação cruzada, ou cross-compiling, é um processo pelo qual o código-fonte de um programa é compilado em um sistema de desenvolvimento que é diferente do sistema de destino no qual o programa será executado. Isso significa que o ambiente de compilação e o ambiente de execução são distintos em termos de arquitetura de hardware, sistema operacional ou ambos. O principal objetivo da compilação cruzada é permitir o desenvolvimento de software para plataformas que não são diretamente compatíveis com o sistema de desenvolvimento utilizado. Por exemplo, você pode desenvolver e compilar um programa em um computador com arquitetura x86 (como um PC) e depois executá-lo em um dispositivo embarcado com uma arquitetura ARM. Isso é especialmente útil em sistemas embarcados, onde os recursos de computação podem ser limitados e não é prático ou viável compilar o código diretamente no dispositivo alvo.
+
+
 
 ## 2. O que é um código de inicialização ou ***startup*** e qual sua finalidade?
+R:
+O código de inicialização, também conhecido como código de startup, é um conjunto de instruções que é executado imediatamente após ligar ou reiniciar um sistema embarcado. Sua finalidade é configurar o ambiente de execução necessário para carregar e executar o restante do software. Isso inclui inicializar e configurar hardware, estabelecer a pilha e heap, configurar o ambiente de execução e carregar o código principal. Em resumo, o código de inicialização garante uma inicialização ordenada e prepara o sistema para a execução do software principal.
+
+
 
 ## 3. Sobre o utilitário **make** e o arquivo **Makefile responda**:
-
 #### (a) Explique com suas palavras o que é e para que serve o **Makefile**.
+R:
+Makefile é um automatizador de processos de compilação que coordena e gerencia diferentes componentes de software para produzir um executável final ou outros artefatos de construção, como bibliotecas compartilhadas. Ele simplifica e automatiza o processo de compilação, garantindo que as dependências entre os arquivos fonte sejam adequadamente gerenciadas e que o software seja construído de forma eficiente e consistente.
 
 #### (b) Descreva brevemente o processo realizado pelo utilitário **make** para compilar um programa.
+R:
+   1. **Leitura do Makefile:** O utilitário `make` inicia lendo o arquivo Makefile no diretório atual. Este arquivo contém as regras e instruções para compilar o programa, incluindo as dependências entre os arquivos fonte e os comandos necessários para compilação.
+   2. **Análise das Dependências:** `make` analisa as dependências entre os diferentes arquivos fonte e determina quais partes do código precisam ser recompiladas com base nas datas de modificação dos arquivos e nas regras definidas no Makefile.
+   3. **Execução dos Comandos de Compilação:** Para cada parte do programa que precisa ser compilada, `make` executa os comandos especificados no Makefile. Isso geralmente envolve invocar o compilador (como gcc para C/C++ ou javac para Java) com as opções apropriadas e os arquivos fonte relevantes.
+   4. **Vinculação dos Objetos Compilados:** Depois que todas as partes do programa são compiladas com sucesso, `make` vincula os objetos compilados juntos para formar o executável final. Isso geralmente envolve invocar o linker (como ld para C/C++ ou javac para Java) para combinar os objetos compilados em um único arquivo executável.
+   5. **Conclusão da Compilação:** Uma vez que todas as etapas de compilação e vinculação são concluídas sem erros, o utilitário `make` gera o executável final ou outros artefatos de construção especificados no Makefile.
 
 #### (c) Qual é a sintaxe utilizada para criar um novo **target**?
 
 #### (d) Como são definidas as dependências de um **target**, para que elas são utilizadas?
 
 #### (e) O que são as regras do **Makefile**, qual a diferença entre regras implícitas e explícitas?
+
+
+
 
 ## 4. Sobre a arquitetura **ARM Cortex-M** responda:
 
