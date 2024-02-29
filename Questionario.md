@@ -26,8 +26,23 @@ R:
    5. **Conclusão da Compilação:** Uma vez que todas as etapas de compilação e vinculação são concluídas sem erros, o utilitário `make` gera o executável final ou outros artefatos de construção especificados no Makefile.
 
 #### (c) Qual é a sintaxe utilizada para criar um novo **target**?
+R: 
+A sintaxe consiste em:
+![image](https://github.com/Suedz01/semb1-2023-02-l01/assets/88901387/0e1da8ab-5b9f-467c-b93c-1259c4cdbeb0)
+
+
 
 #### (d) Como são definidas as dependências de um **target**, para que elas são utilizadas?
+R:
+As dependências são usadas pelo utilitário `make` para determinar quando o alvo precisa ser reconstruído.
+main.o: main.c
+	arm-none-eabi-gcc -c -g -mcpu=cortex-m4 -mthumb -O0 -Wall main.c -o main.o
+nome_do_alvo: dependência1 dependência2 ...
+	comando1
+	comando2
+	...
+As dependências representam os arquivos ou outros targets que o target em questão precisa antes de ser construído. Quando o make é executado, ele verifica as datas de modificação dessas dependências em relação ao próprio target. Se alguma dependência tiver uma data de modificação mais recente do que a do target, o make entende que o target precisa ser reconstruído.
+
 
 #### (e) O que são as regras do **Makefile**, qual a diferença entre regras implícitas e explícitas?
 
